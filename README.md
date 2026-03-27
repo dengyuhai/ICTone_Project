@@ -1,80 +1,43 @@
-# Academic Project Page Template
+# ICTone Project Page
 
-> **Update (September 2025)**: This template has been modernized with better design, SEO, and mobile support. For the original version, see the [original-version branch](https://github.com/eliahuhorwitz/Academic-project-page-template/tree/original-version).
+Project page and assets for:
 
-A clean, responsive template for academic project pages.
+**Towards In-Context Tone Style Transfer with A Large-Scale Triplet Dataset**
 
+## Overview
 
-Example project pages built using this template are:
-- https://horwitz.ai/probex
-- https://vision.huji.ac.il/probegen
-- https://horwitz.ai/mother
-- https://horwitz.ai/spectral_detuning
-- https://vision.huji.ac.il/ladeda
-- https://vision.huji.ac.il/dsire
-- https://horwitz.ai/podd
-- https://dreamix-video-editing.github.io
-- https://horwitz.ai/conffusion
-- https://horwitz.ai/3d_ads/
-- https://vision.huji.ac.il/ssrl_ad
-- https://vision.huji.ac.il/deepsim
+This repository hosts the academic project page for **ICTone**, a diffusion-based framework for semantic-aware tone style transfer, together with the accompanying paper assets.
 
+The project introduces:
 
+- **TST100K**: the first large-scale dataset of 100,000 content-reference-stylized triplets for tone style transfer
+- **TST2K**: a curated benchmark for evaluation across diverse real-world scenarios
+- **Tone Style Scorer**: a two-stage similarity model used for triplet filtering and reward feedback learning
+- **ICTone**: an in-context diffusion framework that jointly conditions on content and reference images
 
-## Start using the template
-To start using the template click on `Use this Template`.
+## Repository Structure
 
-The template uses html for controlling the content and css for controlling the style. 
-To edit the websites contents edit the `index.html` file. It contains different HTML "building blocks", use whichever ones you need and comment out the rest.  
+- `index.html`: project page
+- `static/`: CSS, JavaScript, and paper PDF assets
 
-**IMPORTANT!** Make sure to replace the `favicon.ico` under `static/images/` with one of your own, otherwise your favicon is going to be a dreambooth image of me.
+## Paper
 
-## What's New
+The paper PDF is available at:
 
-- Modern, clean design with better mobile support
-- Improved SEO with proper meta tags and structured data
-- Performance improvements (lazy loading, optimized assets)
-- More Works dropdown
-- Copy button for BibTeX citations
-- Better accessibility
+- `static/pdfs/ICTone_paper.pdf`
 
-## Components
+## Project Page
 
-- Teaser video
-- Image carousel
-- YouTube video embedding
-- Video carousel
-- PDF poster viewer
-- BibTeX citation
+Open `index.html` locally or deploy this repository with GitHub Pages. The page only depends on files under `static/`, so it can be published without the local LaTeX source folder.
 
-## Customization
+## Citation
 
-The HTML file has TODO comments showing what to replace:
-
-- Paper title, authors, institution, conference
-- Links (arXiv, GitHub, etc.)
-- Abstract and descriptions  
-- Videos, images, and PDFs
-- Related works in the dropdown
-- Meta tags for SEO and social sharing
-
-### Meta Tags
-The template includes meta tags for better search engine visibility and social media sharing. These appear in the `<head>` section and help with:
-- Google Scholar indexing
-- Social media previews (Twitter, Facebook, LinkedIn)
-- Search engine optimization
-
-Create a 1200x630px social preview image at `static/images/social_preview.png`.
-
-## Tips
-
-- Compress images with [TinyPNG](https://tinypng.com)
-- Use YouTube for large videos (>10MB)  
-- Replace the favicon in `static/images/`
-- Works with GitHub Pages
-
-## Acknowledgments
-Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
-
-## Website License
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+```bibtex
+@article{deng2026ictone,
+  title={Towards In-Context Tone Style Transfer with A Large-Scale Triplet Dataset},
+  author={Deng, Yuhai and She, Huimin and Shen, Wei and Li, Meng and Wu, Ruoxi and Yuan, Lunxi and Li, Xiang},
+  journal={Under Review},
+  year={2026},
+  url={https://github.com/dengyuhai/ICTone_Project}
+}
+```
