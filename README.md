@@ -1,8 +1,6 @@
 # ICTone Project Page
 
-Project page and assets for:
-
-**Towards In-Context Tone Style Transfer with A Large-Scale Triplet Dataset**
+Project page and assets for **ICTone**.
 
 ## Overview
 
@@ -30,14 +28,3 @@ The paper PDF is available at:
 
 Open `index.html` locally or deploy this repository with GitHub Pages. The page only depends on files under `static/`, so it can be published without the local LaTeX source folder.
 
-## Citation
-
-```bibtex
-@article{deng2026ictone,
-  title={Towards In-Context Tone Style Transfer with A Large-Scale Triplet Dataset},
-  author={Deng, Yuhai and She, Huimin and Shen, Wei and Li, Meng and Wu, Ruoxi and Yuan, Lunxi and Li, Xiang},
-  journal={Under Review},
-  year={2026},
-  url={https://github.com/dengyuhai/ICTone_Project}
-}
-```
