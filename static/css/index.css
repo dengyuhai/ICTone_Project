@@ -122,6 +122,29 @@ body {
     line-height: 1.1 !important;
 }
 
+.project-logo {
+  width: 72px;
+  height: 72px;
+  padding: 0.6rem;
+  object-fit: contain;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+}
+
+.publication-title-with-logo {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.project-logo-inline {
+  flex-shrink: 0;
+}
+
 .publication-banner {
   max-height: 70vh;
   border-radius: var(--border-radius-lg);
@@ -746,6 +769,16 @@ code {
     line-height: 1.2 !important;
     margin-bottom: 1.5rem !important;
   }
+
+  .project-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+  }
+
+  .publication-title-with-logo {
+    gap: 0.8rem;
+  }
   
   .publication-authors {
     font-size: 1rem !important;
@@ -805,6 +838,17 @@ code {
 @media screen and (max-width: 480px) {
   .publication-title {
     font-size: 2rem !important;
+  }
+
+  .project-logo {
+    width: 54px;
+    height: 54px;
+    padding: 0.5rem;
+    border-radius: 16px;
+  }
+
+  .publication-title-with-logo {
+    gap: 0.65rem;
   }
   
   .hero-body {
