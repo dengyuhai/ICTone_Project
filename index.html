@@ -59,14 +59,13 @@
   
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.24/dist/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="static/css/index.css">
   
-  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   
   <!-- Fallback for browsers that don't support preload -->
   <noscript>
-    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
   
@@ -75,6 +74,7 @@
   
   <!-- Defer non-critical JavaScript -->
   <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.24/dist/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/index.js"></script>
   
   <script type="application/ld+json">
@@ -138,10 +138,6 @@
               <span class="author-block">School of Computer Science, Nankai University</span>
               <span class="author-block">and</span>
               <span class="author-block">OPPO AI Center, OPPO Inc.</span>
-            </div>
-
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">Manuscript under review</span>
             </div>
 
             <div class="column has-text-centered">
@@ -246,8 +242,29 @@
 
 <section class="section is-light">
   <div class="container is-max-desktop">
-    <div class="columns is-vcentered">
-      <div class="column is-half">
+    <div class="stacked-figure-section">
+      <div class="stacked-figure-text">
+        <h2 class="title is-3">Tone Similarity Modeling</h2>
+        <div class="content has-text-justified">
+          <p>
+            The tone style scorer is trained in two stages. It first learns coarse tone representations from preset-generated image pairs using weakly supervised contrastive learning, and is then refined using 20K human ranking annotations for better perceptual alignment.
+          </p>
+          <p>
+            This scorer is central to the project: it enables scalable construction of high-quality triplets and provides a reward function that explicitly pushes ICTone toward stronger reference tone fidelity.
+          </p>
+        </div>
+      </div>
+      <div class="stacked-figure-media">
+        <img src="static/images/Discriminator_pipeline.png" alt="Overview of the TST2K benchmark" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="stacked-figure-section">
+      <div class="stacked-figure-text">
         <h2 class="title is-3">Dataset Construction</h2>
         <div class="content has-text-justified">
           <p>
@@ -258,28 +275,26 @@
           </p>
         </div>
       </div>
-      <div class="column is-half">
+      <div class="stacked-figure-media dataset-pipeline-block">
         <img src="static/images/data_pipeline.png" alt="TST100K data construction pipeline" loading="lazy">
       </div>
     </div>
-  </div>
-</section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-vcentered">
-      <div class="column is-half">
-        <img src="static/images/dataset_overview2.png" alt="Overview of the TST2K benchmark" loading="lazy">
-      </div>
-      <div class="column is-half">
-        <h2 class="title is-3">Tone Similarity Modeling</h2>
-        <div class="content has-text-justified">
-          <p>
-            The tone style scorer is trained in two stages. It first learns coarse tone representations from preset-generated image pairs using weakly supervised contrastive learning, and is then refined using 20K human ranking annotations for better perceptual alignment.
-          </p>
-          <p>
-            This scorer is central to the project: it enables scalable construction of high-quality triplets and provides a reward function that explicitly pushes ICTone toward stronger reference tone fidelity.
-          </p>
+    <div class="dataset-overview-block">
+      <div class="columns is-vcentered">
+        <div class="column is-half">
+          <h3 class="title is-5">TST2K Benchmark Overview</h3>
+          <div class="content has-text-justified">
+            <p>
+              <strong>TST2K</strong> is a carefully curated benchmark derived from the large-scale construction pipeline for reliable evaluation. It includes representative image categories such as portraits, food, landscapes, night scenes, and lifestyle photography, covering a broad range of semantic structures and lighting conditions.
+            </p>
+            <p>
+              This benchmark complements TST100K by providing a smaller and cleaner test bed for both quantitative comparison and qualitative visualization, helping us assess whether a method can preserve scene content while faithfully matching the reference tone.
+            </p>
+          </div>
+        </div>
+        <div class="column is-half">
+          <img src="static/images/dataset_overview2.png" alt="Overview of the TST2K benchmark" loading="lazy">
         </div>
       </div>
     </div>
@@ -330,11 +345,46 @@
         </div>
       </div>
     </div>
-    <div class="content has-text-centered">
-      <img src="static/images/Fig2_comp_portrait_food_building_lq.png" alt="Qualitative comparison across portrait, food, and urban scenes" loading="lazy">
-      <p class="mt-4">
-        ICTone consistently avoids semantic misalignment, such as transferring object colors onto faces, and produces outputs closer to the stylized target.
-      </p>
+    <div class="results-carousel-shell" aria-label="Experimental result figures">
+      <div class="results-carousel-header">
+        <p class="results-carousel-hint">Swipe on mobile or use the arrow controls to switch between qualitative figures and the quantitative/user study tables.</p>
+        <div class="results-carousel-controls">
+          <button class="results-carousel-nav" type="button" data-results-prev aria-label="Previous slide">
+            <span aria-hidden="true">&#8249;</span>
+          </button>
+          <div class="results-carousel-dots" data-results-dots></div>
+          <button class="results-carousel-nav" type="button" data-results-next aria-label="Next slide">
+            <span aria-hidden="true">&#8250;</span>
+          </button>
+        </div>
+      </div>
+      <div
+        id="experimental-results-carousel"
+        class="results-carousel"
+        data-results-carousel
+        tabindex="0"
+        aria-roledescription="carousel"
+        aria-label="Experimental Results carousel"
+      >
+        <div class="results-carousel-viewport" data-results-viewport>
+          <div class="results-carousel-track" data-results-track>
+            <article class="item" role="group" aria-roledescription="slide" aria-label="1 of 2">
+              <img src="static/images/Fig2_comp_portrait_food_building_lq.png" alt="Qualitative comparison across portrait, food, and urban scenes" loading="lazy">
+              <h3 class="title is-5 has-text-centered mt-5">Qualitative Comparison</h3>
+              <p class="subtitle has-text-centered">
+                ICTone consistently avoids semantic misalignment, such as transferring object colors onto faces, and produces outputs closer to the stylized target across portrait, food, and urban scenes.
+              </p>
+            </article>
+            <article class="item" role="group" aria-roledescription="slide" aria-label="2 of 2">
+              <img src="static/images/Quantitative_and_UserStudy_tables.png" alt="Quantitative and User Study tables for ICTone" loading="lazy">
+              <h3 class="title is-5 has-text-centered mt-5">Quantitative and User Study Tables</h3>
+              <p class="subtitle has-text-centered">
+                The quantitative benchmarks and user study both show strong performance for ICTone, highlighting better tone fidelity, preserved structure, and stronger overall preference from human evaluators.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -355,4 +405,3 @@
 
   </body>
   </html>
-
