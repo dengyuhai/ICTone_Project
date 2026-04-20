@@ -126,12 +126,12 @@ body {
 .project-logo {
   width: 72px;
   height: 72px;
-  padding: 0.6rem;
+  padding: 0;
   object-fit: contain;
-  border-radius: 20px;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-md);
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .publication-title-with-logo {
@@ -146,7 +146,6 @@ body {
   display: inline-block;
   width: 1.05em;
   height: 1.05em;
-  padding: 0.12em;
   margin-right: 0.2em;
   margin-top: -0.08em;
   vertical-align: middle;
@@ -782,7 +781,7 @@ code {
   }
 
   .project-logo {
-    border-radius: 16px;
+    border-radius: 0;
   }
   
   .publication-authors {
@@ -846,7 +845,7 @@ code {
   }
 
   .project-logo {
-    border-radius: 14px;
+    border-radius: 0;
   }
   
   .hero-body {
