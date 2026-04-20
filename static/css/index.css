@@ -120,6 +120,7 @@ body {
     color: var(--text-primary) !important;
     margin-bottom: 2rem !important;
     line-height: 1.1 !important;
+    font-size: clamp(2.05rem, 3.5vw, 3.45rem) !important;
 }
 
 .project-logo {
@@ -134,15 +135,25 @@ body {
 }
 
 .publication-title-with-logo {
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  display: block !important;
+  width: min(100%, 1160px);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .project-logo-inline {
-  flex-shrink: 0;
+  display: inline-block;
+  width: 1.05em;
+  height: 1.05em;
+  padding: 0.12em;
+  margin-right: 0.2em;
+  margin-top: -0.08em;
+  vertical-align: middle;
+}
+
+.publication-title-with-logo > span {
+  display: inline;
 }
 
 .publication-banner {
@@ -765,19 +776,13 @@ code {
   }
   
   .publication-title {
-    font-size: 2.5rem !important;
+    font-size: clamp(1.8rem, 5.4vw, 2.4rem) !important;
     line-height: 1.2 !important;
     margin-bottom: 1.5rem !important;
   }
 
   .project-logo {
-    width: 60px;
-    height: 60px;
-    border-radius: 18px;
-  }
-
-  .publication-title-with-logo {
-    gap: 0.8rem;
+    border-radius: 16px;
   }
   
   .publication-authors {
@@ -837,18 +842,11 @@ code {
 
 @media screen and (max-width: 480px) {
   .publication-title {
-    font-size: 2rem !important;
+    font-size: clamp(1.5rem, 7.2vw, 1.95rem) !important;
   }
 
   .project-logo {
-    width: 54px;
-    height: 54px;
-    padding: 0.5rem;
-    border-radius: 16px;
-  }
-
-  .publication-title-with-logo {
-    gap: 0.65rem;
+    border-radius: 14px;
   }
   
   .hero-body {
