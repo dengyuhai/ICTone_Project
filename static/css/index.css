@@ -112,6 +112,16 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+.teaser-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+  background: #000;
+}
+
 
 /* Publication Content Styling */
 .publication-title {
