@@ -82,6 +82,10 @@ body {
     margin: 8px 4px;
 }
 
+.dataset-id {
+    margin-left: -0.06em;
+}
+
 .dnerf {
   font-variant: small-caps;
 }
@@ -197,6 +201,7 @@ body {
 .publication-venue {
     color: var(--text-secondary);
     width: fit-content;
+    font-size: 1.25rem;
     font-weight: 600;
     background: var(--background-accent);
     padding: 0.5rem 1rem;
